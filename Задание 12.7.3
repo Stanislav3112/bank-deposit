@@ -1,0 +1,12 @@
+invest=float(input("Введите смму вклада :").replace(',', '.'))
+per_cent = {'ТКБ': 5.6, 'СКБ': 5.9, 'ВТБ': 4.28, 'СБЕР': 4.0}
+x= round(per_cent.get("ТКБ")*invest/100,2)
+y= round(per_cent.get("СКБ")*invest/100,2)
+v= round(per_cent.get("ВТБ")*invest/100,2)
+c= round(per_cent.get("СБЕР")*invest/100,2)
+print ('Депозит ТКБ =', x,"рублей", '\nДепозит СКБ =', y,"рублей",
+       '\nДепозит ВТБ =', v,"рублей", '\nДепозит СБЕР =', c,"рублей",)
+deposit_bank = {'ТКБ' : x, 'СКБ' : y, 'ВТБ' : v, 'СБЕР' : c}
+max_value = max(deposit_bank.values())
+max_value_key = max(deposit_bank, key=deposit_bank.get)
+print ('Самый лучший банк по вкладу', max_value_key, '=', max_value, '%', 'годовых')
